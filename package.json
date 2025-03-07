@@ -1,0 +1,35 @@
+{
+	"name": "folio-cms",
+	"version": "1.0.0",
+	"license": "UNLICENSED",
+	"scripts": {
+		"test": "echo \"No tests yet\"",
+		"lint": "eslint . --fix",
+		"lint:frontend": "eslint ./frontend --fix",
+		"lint:backend": "eslint ./backend --fix",
+		"postinstall": "husky"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.4.3",
+		"prettier": "^3.5.3"
+	},
+	"lint-staged": {
+		"*/backend/*.{js,jsx,ts,tsx}": [
+			"yarn --cwd backend eslint --fix",
+			"yarn --cwd backend prettier --write"
+		],
+		"*/backend/*.{json,md,html,css,scss}": [
+			"yarn --cwd backend prettier --write"
+		],
+		"*/frontend/*.{js,jsx,ts,tsx}": [
+			"yarn --cwd frontend lint --fix",
+			"yarn --cwd frontend prettier --write"
+		],
+		"*/frontend/*.{json,md,html,css,scss}": [
+			"yarn --cwd frontend prettier --write"
+		]
+	}
+}
