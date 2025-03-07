@@ -70,7 +70,7 @@
 		"testEnvironment": "node"
 	},
 	"lint-staged": {
-		"*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
-		"*.{json,md,html,css,scss}": ["prettier --write"]
+		"backend/**/*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+		"backend/**/*.{json,md,html,css,scss}": ["prettier --write"]
 	}
 }
